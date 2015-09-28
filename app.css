@@ -14,6 +14,9 @@ body{
 .en{
     font-family: Georgia,"Times New Roman","DejaVu Serif",serif !important;
 }
+a{
+    color: blue;
+}
 .centered{
     text-align: center;
 }
