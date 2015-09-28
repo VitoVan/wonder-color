@@ -35,7 +35,6 @@ div.centered {
     height: 450px;
     border-radius: 6px;
     border: 1px solid #999;
-    margin: 36px;
     padding: 20px;
     transition: background-color 0.5s ease 0s;
 }
@@ -60,4 +59,8 @@ img.hidden{
     margin: 0.5em;
     border-radius: 2px;
     float: left;
+}
+.note{
+    color: #666;
+    font-size: 0.9em;
 }

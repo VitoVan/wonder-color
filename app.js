@@ -24,4 +24,6 @@ $(document).ready(function(){
     $('#colorname').donetyping(function(){
         wonder($(this).val());
     });
+    $('#colorname').val('I feel sorrow');
+    wonder($('#colorname').val());
 });
