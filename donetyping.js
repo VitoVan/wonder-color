@@ -26,7 +26,10 @@
                     // the event from triggering too premptively. Without this line,
                     // using tab/shift+tab will make the focused element fire the callback.
                     if (e.type=='keyup' && e.keyCode!=8) return;
-                    
+
+                    //prevent ctrl+a or something..
+                    if(e.ctrlKey || e.altKey) return;
+
                     // Check if timeout has been set. If it has, "reset" the clock and
                     // start over again.
                     if (timeoutReference) clearTimeout(timeoutReference);

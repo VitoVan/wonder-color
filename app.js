@@ -1,4 +1,6 @@
 function wonder(text,url){
+    $('.color-block').remove();
+    $('#cssload-pgloading').show();
     $.post('/wonder',{text: text},function(data){
         console.log("/pics/" + data);
         var img = document.createElement('img');
@@ -7,7 +9,6 @@ function wonder(text,url){
             var vibrant = new Vibrant(img);
             var swatches = vibrant.swatches();
             var rendered = false;
-            $('.color-block').remove();
             for (swatch in swatches)
                 if (swatches.hasOwnProperty(swatch) && swatches[swatch]){
                     console.log(swatch, swatches[swatch].getHex());
@@ -17,6 +18,7 @@ function wonder(text,url){
                         .insertAfter($('#colorname'));
                 }
         });
+        $('#cssload-pgloading').hide();
     });
 }
 
