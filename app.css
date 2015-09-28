@@ -1,0 +1,63 @@
+/*
+ * Some of these copied from: http://berkin.me/static/css/common.css
+ */
+body{
+    font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB","Microsoft Yahei","微软雅黑",sans-serif;
+    color: #000;
+    background: #FFF none repeat scroll 0% 0%;
+    font-size: 1em;
+    line-height: 1.4;
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+.en{
+    font-family: Georgia,"Times New Roman","DejaVu Serif",serif !important;
+}
+.centered{
+    text-align: center;
+}
+div.centered {
+    margin: 0px auto;
+}
+div.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.colorsample{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 350px;
+    height: 450px;
+    border-radius: 6px;
+    border: 1px solid #999;
+    margin: 36px;
+    padding: 20px;
+    transition: background-color 0.5s ease 0s;
+}
+input#colorname {
+    transition: color 0.5s ease 0s, border-color 0.5s ease 0s;
+    background: transparent none repeat scroll 0% 0%;
+    padding: 6px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    outline: medium none;
+    width: 75%;
+    margin-bottom: 0.4em;
+}
+img.hidden{
+}
+.color-block{
+    width: 18em;
+    height: 3em;
+    background-color: #F9DAD5;
+    margin: 0.5em;
+    border-radius: 2px;
+    float: left;
+}
