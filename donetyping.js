@@ -1,4 +1,4 @@
-//
+// http://stackoverflow.com/questions/14042193/how-to-trigger-an-event-in-input-text-after-i-stop-typing-writing
 // $('#element').donetyping(callback[, timeout=1000])
 // Fires callback when a user has finished typing. This is determined by the time elapsed
 // since the last keystroke and timeout parameter or the blur event--whichever comes first.

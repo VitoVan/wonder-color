@@ -1,6 +1,6 @@
 (setf sb-impl::*default-external-format* :UTF-8)
 ;;(declaim (optimize (debug 3)))
-(ql:quickload '(hunchentoot drakma cl-spider))
+(ql:quickload '(hunchentoot drakma cl-spider cl-cron))
 
 (defpackage wonder-color
   (:use :cl :hunchentoot))
@@ -44,3 +44,15 @@
        (create-regex-dispatcher "^/wonder$" 'controller-wonder-pic)))
 
 (start-server)
+
+(defun clear-pics()
+  (dolist (file (fad:list-directory "pics"))
+    (if (> (- (get-universal-time) (file-write-date file)) 100)
+        (progn
+          (delete-file file)
+          (format t "Deleted: ~A~%" file)))))
+
+;;Cron Job
+(cl-cron:make-cron-job #'clear-pics)
+(cl-cron:start-cron)
+
