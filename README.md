@@ -11,7 +11,7 @@ http://wc.vitovan.com
 ![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/the-color-of-truth.png)
 ![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/忧伤.png)
 
-## Used technology
+## Used Technologies
 
 https://github.com/jariz/vibrant.js
 
