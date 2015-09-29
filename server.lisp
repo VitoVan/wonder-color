@@ -20,7 +20,7 @@
   (format t "Server started at 5001"))
 
 (defun search-pic(text)
-  (cdaar (cl-spider:get-data "http://cn.bing.com/images/search" :selector "img[height]" :attrs '("src") :params `(("q" . ,text)))))
+  (cdaar (cl-spider:get-data "http://bing.com/images/search" :selector "img[height]" :attrs '("src") :params `(("q" . ,text) ("qft" . "+filterui:imagesize-wallpaper")))))
 
 (defun controller-wonder-pic ()
   (let* ((pic-name (cl-ppcre:regex-replace-all " " (parameter "text") "-"))
