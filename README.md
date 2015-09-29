@@ -1,7 +1,7 @@
 # wonder-color
 Translate Text to Color
 
-## Demo:
+## Demo
 
 http://wc.vitovan.com
 
