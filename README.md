@@ -16,3 +16,7 @@ http://wc.vitovan.com
 https://github.com/jariz/vibrant.js
 
 https://github.com/VitoVan/cl-spider
+
+## License
+
+GPL v2
