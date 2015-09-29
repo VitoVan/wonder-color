@@ -6,6 +6,8 @@
   (:use :cl :hunchentoot))
 (in-package :wonder-color)
 
+(defvar *pic-dir* "pics/")
+
 ; Start Hunchentoot
 (setf *show-lisp-errors-p* t)
 (setf *acceptor* (make-instance 'hunchentoot:easy-acceptor
@@ -25,7 +27,7 @@
 (defun controller-wonder-pic ()
   (let* ((pic-name (cl-ppcre:regex-replace-all " " (parameter "text") "-"))
          (pic-url (search-pic (parameter "text")))
-         (pic-file-path (concatenate 'string "pics/" pic-name)))
+         (pic-file-path (concatenate 'string *pic-dir* pic-name)))
     (or
      (fad:file-exists-p pic-file-path)
      (let ((file (open pic-file-path
@@ -49,7 +51,7 @@
 (start-server)
 
 (defun clear-pics()
-  (dolist (file (fad:list-directory "pics"))
+  (dolist (file (fad:list-directory *pic-dir*))
     (if (> (- (get-universal-time) (file-write-date file)) 100)
         (progn
           (delete-file file)
