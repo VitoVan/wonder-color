@@ -27,8 +27,8 @@
                     // using tab/shift+tab will make the focused element fire the callback.
                     if (e.type=='keyup' && e.keyCode!=8) return;
 
-                    //prevent ctrl+a or something..
-                    if(e.ctrlKey || e.altKey) return;
+                    //prevent ctrl+a or something.. / but it also prevented ctrl+v, it sucks
+                    //if(e.ctrlKey || e.altKey) return;
 
                     // Check if timeout has been set. If it has, "reset" the clock and
                     // start over again.
