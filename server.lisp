@@ -52,7 +52,7 @@
 
 (defun clear-pics()
   (dolist (file (fad:list-directory *pic-dir*))
-    (if (> (- (get-universal-time) (file-write-date file)) 100)
+    (if (> (- (get-universal-time) (file-write-date file)) (* 60 60 12))
         (progn
           (delete-file file)
           (format t "Deleted: ~A~%" file)))))
