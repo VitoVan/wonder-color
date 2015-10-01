@@ -21,7 +21,7 @@
                 var $el = $(el);
                 // Chrome Fix (Use keyup over keypress to detect backspace)
                 // thank you @palerdot
-                $el.is(':input') && $el.on('keyup keypress',function(e){
+                $el.is(':input') && $el.on('keyup keypress paste',function(e){
                     // This catches the backspace button in chrome, but also prevents
                     // the event from triggering too premptively. Without this line,
                     // using tab/shift+tab will make the focused element fire the callback.
