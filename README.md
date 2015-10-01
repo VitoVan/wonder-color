@@ -5,11 +5,13 @@ Translate Text to Color
 
 http://wc.vitovan.com
 
+ Try inputs like "ycombinator" or "facebook", or even "doraemon". Everything is supported, especially **logos**. 
+
 ## Screenshots
 
-![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/I-feel-sorrow.png)
-![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/the-color-of-truth.png)
-![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/忧伤.png)
+![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/new-google-logo.png)
+![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/facebook.png)
+![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/ycombinator.png)
 
 ## Used Technologies
 
