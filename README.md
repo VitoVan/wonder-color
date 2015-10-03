@@ -9,9 +9,8 @@ http://wc.vitovan.com
 
 ## Screenshots
 
-![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/new-google-logo.png)
 ![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/facebook.png)
-![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/ycombinator.png)
+![](https://raw.githubusercontent.com/VitoVan/wonder-color/master/screenshots/api.png)
 
 ## Used Technologies
 
