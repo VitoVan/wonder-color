@@ -9,6 +9,11 @@
         <script type="text/javascript" src="jquery.js"></script>
     </head>
     <body>
+        <div class="head">
+            <a href="/">Home</a>
+            <a class="current" href="api.html">API</a>
+            <a href="https://github.com/VitoVan/wonder-color">Code</a>
+        </div>
         <h1 class="centered">Wonder Color API</h1>
         <h4 class="centered">Text to Color Converter</h4>
         <div class="centered">
@@ -33,10 +38,8 @@
             <p>Wanna JSONP? This link should work:</p>
             <p class="code"><a target="_blank" href="/wonder-api?text=hello kitty&callback=somefunc">/wonder-api?text=hello kitty&callback=somefunc</a></p>
             <hr>
-            <p class="note" style="text-align: left;">
-                * In some case, you may find that colors returned by this API is different with colors on <a href="/">the home page</a>, that is because: Colors on this page is generated on the server with a headless webkit, though colors on the home page is caculated by your browser, they may have different rendering result.
-                <br>
-                * Here is the <a href="https://github.com/VitoVan/wonder-color">code</a>. Here is the <a href="https://news.ycombinator.com/item?id=10308043">discussion</a>
+            <p class="note">
+                Discuss on HN: <a href="https://news.ycombinator.com/item?id=10308043">https://news.ycombinator.com/item?id=10308043</a>
             </p>
         </div>
         <script>
@@ -49,12 +52,25 @@
                  $('#cssload-pgloading').hide();
              }             
          });
+         function hexToRgb(hex) {
+             var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+             return result ? {
+                 r: parseInt(result[1], 16),
+                 g: parseInt(result[2], 16),
+                 b: parseInt(result[3], 16)
+             } : null;
+         }
          function renderColor(data){
              for (index in data){
+                 var rgbColor = hexToRgb(data[index]);
+                 var invertColor = 'rgb(' + (255 - rgbColor.r) + ','
+                                 + (255 - rgbColor.g) + ',' + (255 - rgbColor.b) + ')';
                  $('<div>')
-                        .addClass('color-block')
-                        .css('backgroundColor', data[index])
-                        .insertBefore($('hr'));
+                .css('color',invertColor)
+                .text(data[index])
+                .addClass('color-block')
+                .css('backgroundColor', data[index])
+                .insertBefore($('hr:first'));
              }
          }
         </script>

@@ -1,4 +1,5 @@
 #!/usr/bin/phantomjs --web-security=false
+var serverBase = "http://wc.vitovan.vito/"
 var system = require('system');
 if (system.args.length === 1) {
     console.log('Usage: wonder-api.js <query text>');
@@ -13,7 +14,7 @@ page.onConsoleMessage = function(msg) {
         console.log(msg);
     }
 };
-page.open('http://localhost:5001/wonder-api-html', 'post', 'text=' + queryText, function(status) {
+page.open(serverBase + 'wonder-api-html', 'post', 'text=' + encodeURI(queryText), function(status) {
     if (status !== 'success') {
         console.log('Unable to post!');
         console.log('PHANTOM:EXIT');

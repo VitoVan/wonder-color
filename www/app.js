@@ -1,27 +1,27 @@
-function wonder(text,url){
+function hexToRgb(hex) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+function wonder(text){
     $('.color-block').remove();
     $('#cssload-pgloading').show();
-    $.post('/wonder',{text: text},function(data){
-        var img = document.createElement('img');
-        img.setAttribute('src',"/pics/" + data);
-        img.addEventListener('load', function() {
-            var vibrant = new Vibrant(img);
-            var swatches = vibrant.swatches();
-            var rendered = false;
-            for (swatch in swatches){
-                if (swatches.hasOwnProperty(swatch) && swatches[swatch]){
-                    var invertColor = 'rgb(' + (255 - swatches[swatch].getRgb()[0]) + ','
-                        + (255 - swatches[swatch].getRgb()[1]) + ',' + (255 - swatches[swatch].getRgb()[2]) + ')';
-                    $('<div>')
-                        .css('color',invertColor)
-                        .text(swatches[swatch].getHex().toUpperCase())
-                        .addClass('color-block')
-                        .css('backgroundColor',swatches[swatch].getHex())
-                        .insertAfter($('#colorname'));
-                }
-            }
-            $('#cssload-pgloading').hide();
-        });
+    $.post('/wonder-api',{text: text},function(data){
+        for (index in data){
+            var rgbColor = hexToRgb(data[index]);
+            var invertColor = 'rgb(' + (255 - rgbColor.r) + ','
+                + (255 - rgbColor.g) + ',' + (255 - rgbColor.b) + ')';
+            $('<div>')
+                .css('color',invertColor)
+                .text(data[index])
+                .addClass('color-block')
+                .css('backgroundColor', data[index])
+                .insertAfter($('#colorname'));
+        }
+        $('#cssload-pgloading').hide();
     });
 }
 
@@ -29,6 +29,6 @@ $(document).ready(function(){
     $('#colorname').donetyping(function(){
         wonder($(this).val());
     });
-    $('#colorname').val('new google logo');
+    $('#colorname').val('hello kitty');
     wonder($('#colorname').val());
 });

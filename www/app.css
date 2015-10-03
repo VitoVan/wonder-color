@@ -69,6 +69,11 @@ img.hidden{
     font-size: 0.9em;
     padding: 1em;
 }
+.note>a{
+    color: black;
+    opacity: 0.9;
+    font-style: italic;
+}
 .code{
     background-color: #EEE;
     border-radius: 0.5em;
@@ -79,6 +84,17 @@ img.hidden{
 }
 .code>.pl-k{
     color: #a71d5d;
+}
+.head{
+    padding: 0.5em;    
+}
+.head>a{
+    padding: 0.2em 0.5em;
+}
+.head>a.current{
+    background-color: blue;
+    color: white;
+    border-radius: 0.2em;
 }
 hr{
     width: 100%;
