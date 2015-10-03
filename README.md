@@ -15,6 +15,8 @@ http://wc.vitovan.com
 
 ## Used Technologies
 
+https://github.com/ariya/phantomjs
+
 https://github.com/jariz/vibrant.js
 
 https://github.com/VitoVan/cl-spider
