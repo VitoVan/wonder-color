@@ -95,6 +95,7 @@ img.hidden{
     background-color: blue;
     color: white;
     border-radius: 0.2em;
+    text-decoration: none;
 }
 hr{
     width: 100%;
