@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <title>Wonder Color</title>
+        <link rel="stylesheet" type="text/css" href="app.css" />
+        <script type="text/javascript" src="jquery.js"></script>
+    </head>
+    <body>
+        <h1 class="centered">Wonder Color API</h1>
+        <h4 class="centered">Text to Color Converter</h4>
+        <div class="centered">
+            <p>
+                Open your developer console, copy and paste below:
+            </p>
+            <p class="code">
+                $.post(<span class="pl-s">'/wonder-api'</span>, {text<span class="pl-k">:</span> <span class="pl-s">"hello kitty"</span>}, <span class="pl-k">function</span>(data){ renderColor(data); });
+            </p>
+            <p>Hit Enter then wait a second.</p>
+            <div id="cssload-pgloading" style="display:none;">
+	            <div class="cssload-loadingwrap">
+		            <ul class="cssload-bokeh">
+			            <li></li>
+			            <li></li>
+			            <li></li>
+			            <li></li>
+		            </ul>
+	            </div>
+            </div>            
+            <hr>
+            <p>Wanna JSONP? This link should work:</p>
+            <p class="code"><a target="_blank" href="/wonder-api?text=hello kitty&callback=somefunc">/wonder-api?text=hello kitty&callback=somefunc</a></p>
+            <hr>
+            <p class="note" style="text-align: left;">
+                * In some case, you may find that colors returned by this API is different with colors on <a href="/">the home page</a>, that is because: Colors on this page is generated on the server with a headless webkit, though colors on the home page is caculated by your browser, they may have different rendering result.
+                <br>
+                * Here is the <a href="https://github.com/VitoVan/wonder-color">code</a>. Here is the <a href="https://news.ycombinator.com/item?id=10308043">discussion</a>
+            </p>
+        </div>
+        <script>
+         $.ajaxSetup({
+             beforeSend: function(){
+                 $('.color-block').remove();
+                 $('#cssload-pgloading').show();
+             },
+             complete: function(){
+                 $('#cssload-pgloading').hide();
+             }             
+         });
+         function renderColor(data){
+             for (index in data){
+                 $('<div>')
+                        .addClass('color-block')
+                        .css('backgroundColor', data[index])
+                        .insertBefore($('hr'));
+             }
+         }
+        </script>
+    </body>
+</html>

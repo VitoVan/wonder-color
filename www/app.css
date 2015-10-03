@@ -67,8 +67,23 @@ img.hidden{
 .note{
     color: #666;
     font-size: 0.9em;
+    padding: 1em;
 }
-
+.code{
+    background-color: #EEE;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+.code>.pl-s{
+    color: #183691;
+}
+.code>.pl-k{
+    color: #a71d5d;
+}
+hr{
+    width: 100%;
+    margin-top: 2em;
+}
 #cssload-pgloading {}
 
 #cssload-pgloading:after {
