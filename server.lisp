@@ -86,8 +86,8 @@
                                          :user-agent cl-spider:*cl-spider-user-agent*)))
          (when input
            (loop for byte = (read-byte input nil nil)
-              while byte do (write-byte byte file))
-           (progn (close input) (close file))))))
+              while byte do (write-byte byte file)))
+         (progn (close input) (close file)))))
     pic-name)))
 
 (defun controller-wonder-api-html ()
